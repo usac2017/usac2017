@@ -1,0 +1,14 @@
+setup.py
+project.egg-info/PKG-INFO
+project.egg-info/SOURCES.txt
+project.egg-info/dependency_links.txt
+project.egg-info/entry_points.txt
+project.egg-info/top_level.txt
+usac/__init__.py
+usac/items.py
+usac/middlewares.py
+usac/pipelines.py
+usac/settings.py
+usac/setup.py
+usac/spiders/__init__.py
+usac/spiders/usacbasic2017.py
