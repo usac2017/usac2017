@@ -7,8 +7,7 @@ import datetime,re,requests
 REPORT_DAYS = 1
 MAILGUN_KEY = 'key-297e3d8d51b08f45259c1f9d9191548d'
 MAILGUN_SANDBOX = 'sandboxbb254b3e33c14969979996793b5e3ec2.mailgun.org'
-#MAILGUN_RECIPIENT = 'daniel@erateconsulting.org'
-MAILGUN_RECIPIENT = '89anisim89@mail.ru'
+MAILGUN_RECIPIENT = 'daniel@erateconsulting.org'
 
 def today():
   return datetime.datetime.now().strftime('%Y-%m-%d')
