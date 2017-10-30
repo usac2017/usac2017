@@ -12,11 +12,11 @@ MAILGUN_RECIPIENT = 'daniel@erateconsulting.org'
 def today():
   return datetime.datetime.now().strftime('%Y-%m-%d')
 
-def sendEMAIL(csv='',total=0,email=MAILGUN_SANDBOX):
-  request_url = 'https://api.mailgun.net/v2/{0}/messages'.format(email)
+def sendEMAIL(csv='',total=0,email=MAILGUN_RECIPIENT):
+  request_url = 'https://api.mailgun.net/v2/{0}/messages'.format(MAILGUN_SANDBOX)
   data={
     'from': 'FRN Denial Job <usac@scrappinghub.com>',
-    'to': MAILGUN_RECIPIENT,
+    'to': email,
     'subject': 'UASAC FRNs Denied on %s' % datetime.datetime.now().strftime('%Y-%m-%d'),
     'text': 'Founded %s %s in %s %s.' % (total,'item' if total==1 else 'items',REPORT_DAYS,'day' if REPORT_DAYS==1 else 'days')
   }
