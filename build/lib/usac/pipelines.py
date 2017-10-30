@@ -61,5 +61,5 @@ class UsacPipeline(object):
     
     def close_spider(self,spider):
         csv = makeCSVReport(self.csv_rows)
-        sendEMAIL(csv=csv,total=len(self.csv_rows))
-        sendEMAIL(csv=csv,total=len(self.csv_rows),'89anisim89@mail.ru')
+        sendEMAIL(csv,len(self.csv_rows))
+        sendEMAIL(csv,len(self.csv_rows),'89anisim89@mail.ru')
