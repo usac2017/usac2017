@@ -12,8 +12,8 @@ MAILGUN_RECIPIENT = 'daniel@erateconsulting.org'
 def today():
   return datetime.datetime.now().strftime('%Y-%m-%d')
 
-def sendEMAIL(csv='',total=0):
-  request_url = 'https://api.mailgun.net/v2/{0}/messages'.format(MAILGUN_SANDBOX)
+def sendEMAIL(csv='',total=0,email=MAILGUN_SANDBOX):
+  request_url = 'https://api.mailgun.net/v2/{0}/messages'.format(email)
   data={
     'from': 'FRN Denial Job <usac@scrappinghub.com>',
     'to': MAILGUN_RECIPIENT,
@@ -62,3 +62,4 @@ class UsacPipeline(object):
     def close_spider(self,spider):
         csv = makeCSVReport(self.csv_rows)
         sendEMAIL(csv=csv,total=len(self.csv_rows))
+        sendEMAIL(csv=csv,total=len(self.csv_rows),'89anisim89@mail.ru')
