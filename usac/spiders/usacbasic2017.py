@@ -34,7 +34,8 @@ class UsacbasicSpider(scrapy.Spider):
                     'host': "data.usac.org",
                     'referer': "https://data.usac.org/publicreports/FRN/Status/FundYear",
                     }
-        count=0
+       
+    count=0
         token = response.xpath("//input[@name='__RequestVerificationToken']/@value").extract_first() #Request token from the server !important
         for everystate in response.xpath("//select[@id='SelectedStateId']/option/@value").extract():# get value for All state
             count=count+1
